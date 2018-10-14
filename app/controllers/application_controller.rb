@@ -20,5 +20,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def logged_in_user
+	redirect_to '/' if current_user
+  end
+
 
 end

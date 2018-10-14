@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  before_action :logged_in_user, except: [:destroy]
+  
   # Step 34.
   def new
   end
