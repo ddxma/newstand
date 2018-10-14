@@ -2,6 +2,28 @@ Rails.application.routes.draw do
   resources :articles
   root 'articles#index'
 
+  # Step 21.
+  # Map the GET request for the URL /signup to the Users controller's
+  # new action.
+  get 'signup' => 'users#new'
+  resources :users
+
+  # Step 32.
+  # Map GET requests for the URL /login to the Sessions controller's 
+  # new action
+  get '/login' => 'sessions#new'
+
+  # Step 33.
+  # Map POST requests for the URL /login to the Sessions controller's 
+  # create action, handle POST requests and check whether 
+  # the submitted username and password match the ones in the database.
+  post '/login' => 'sessions#create'
+
+  # Step 40.
+  # Map DELETE requests for the url /logout to the Sessions controller's
+  # destroy action.
+  delete '/logout' => 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

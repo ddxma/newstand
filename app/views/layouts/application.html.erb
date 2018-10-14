@@ -18,8 +18,18 @@
         <div class="nav">
           
           <!-- Your code here -->
-
-
+          <!-- Use current_user to update the nav items -->
+          <% if current_user %> 
+          <ul> 
+            <li><%= current_user.email %></li> 
+            <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+          </ul> 
+          <% else %> 
+          <ul> 
+            <li><%= link_to "Login", 'login' %></a></li> 
+            <li><%= link_to "Register", 'signup' %></a></li> 
+          </ul> 
+          <% end %>
 
         </div>
       </div>

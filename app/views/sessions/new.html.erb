@@ -1,6 +1,13 @@
 <div class="login">
   <div class="container">
 
+  <!-- There is no such thing as Session model, so the name of the resource and the corresponding URL are used -->
+  <!-- # Step 35. -->
+  <%= form_for(:session, url: login_path) do |f| %> 
+    <%= f.email_field :email, :placeholder => "Email" %> 
+    <%= f.password_field :password, :placeholder => "Password" %> 
+  <%= f.submit "Log in", class: "btn-submit" %> 
+  <% end %>
     
   </div>
 </div>

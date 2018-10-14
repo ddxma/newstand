@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
-  
+
+  # Step 42.
+  # Require users to be logged in for all action,
+  # except the index action
+  before_action :require_user, except: [:index]
+
   def index
     @articles = Article.all
   end
@@ -47,4 +52,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :author, :body)
     end
+
 end

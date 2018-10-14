@@ -1,7 +1,16 @@
 <div class="signup">
   <div class="container">
     
+    <!-- # Step 25.
+    # Use form_for to create a form with the fields of the @user object -->
     <!-- Your form here -->
-
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :first_name, :placeholder => "First name" %>
+      <%= f.text_field :last_name, :placeholder => "Last name" %>
+      <%= f.email_field :email, :placeholder => "Email" %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+      <%= f.submit "Create an account", class: "btn-submit" %>
+    <% end %>
+    
   </div>
 </div>
